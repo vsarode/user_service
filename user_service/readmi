@@ -1,0 +1,18 @@
+To run the app
+
+
+1) export the path
+    export DJANGO_SETTINGS_MODULE=user_service.db.settings.local;export PYTHONPATH=$PWD;
+
+2) Create database which is specified in  django_demo/quora/db/settings/local.py
+
+3) Migrate a tables written in user_service/db/user_models/models.py
+
+    python user_service/manage.py makemigrations
+
+4) Migrate tables into mysql
+
+    python user_service/manage.py migrate
+
+5) Run the app
+    python  user_service/conf/service_app.py
