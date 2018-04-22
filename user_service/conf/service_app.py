@@ -11,13 +11,13 @@ from user_service.service_apis.login import Login
 
 app = Flask(__name__)
 
-api = Api(app)
+api = Api(app, prefix="/userservice/")
 
-api.add_resource(Ping, '/ping')
-api.add_resource(UserHandler, '/user', '/user/<string:username>')
-api.add_resource(Login, '/login')
-api.add_resource(Validate, '/validate')
+api.add_resource(Ping, 'ping')
+api.add_resource(UserHandler, 'user', 'user/<string:username>')
+api.add_resource(Login, 'login')
+api.add_resource(Validate, 'validate')
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8090, debug=True)
+    app.run(host='localhost', port=2004, debug=True)
